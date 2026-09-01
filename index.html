@@ -230,17 +230,31 @@ body{
             Nuestra cita cafetera 🤎
         </h2>
 
-        <p class="text-[var(--text-color)] font-bold mb-4 leading-relaxed">
-            Hay conversaciones que merecen un buen café ☕
-            <br><br>
-            Elige el sábado que más te guste y hagámoslo realidad.✨
-        </p>
+        <p class="text-sm text-[var(--warm-dark-brown)] font-semibold mb-3">
+    ☕ Estos son algunos de los sábados en los que tengo disponibilidad.
+</p>
 
-        <input
-            id="coffeeDate"
-            type="date"
-            class="w-full border-2 border-[var(--warm-brown)] rounded-xl p-3 mb-4">
+       <select
+    id="coffeeDate"
+    class="w-full border-2 border-[var(--warm-brown)] rounded-xl p-3 mb-4">
 
+    <option value="">
+        ☕ Selecciona un sábado
+    </option>
+
+    <option value="2026-09-19">
+        Sábado 19 de septiembre
+    </option>
+
+    <option value="2026-09-26">
+        Sábado 26 de septiembre
+    </option>
+
+    <option value="2026-10-03">
+        Sábado 3 de octubre
+    </option>
+
+</select>
         <button
             onclick="sendProposal()"
             class="w-full bg-[var(--warm-brown)] hover:bg-[var(--warm-dark-brown)] text-white py-3 rounded-xl mb-2 transition">
@@ -342,7 +356,7 @@ function sendProposal(){
 
     if(!fechaSeleccionada){
 
-        alert('Selecciona una fecha ☕');
+        alert('☕ Selecciona una fecha.');
 
         return;
     }
@@ -365,11 +379,11 @@ function sendProposal(){
 
 Acepto oficialmente la invitación.
 
-Me gustaría que nuestro café fuera:
+Mi sábado elegido es:
 
 📅 ${fechaFormateada}
 
-Espero que podamos compartir una conversación agradable, muchas sonrisas y una excelente taza de café. ☕✨😊`;
+Nos vemos para ese cafecito ☕✨😊`;
 
     const url =
         `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
